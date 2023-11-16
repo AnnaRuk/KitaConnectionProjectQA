@@ -3,7 +3,7 @@ package org.ait.kitaconnection.data;
 public class UserData {
     public static final String GENDER = "Female";
     public static final String FIRST_NAME = "Ali";
-    public static final String LAST_NAME = "Baba";
+    public static final String LAST_NAME = "BabaD";
     public static final String EMAIL = "smitth@gm.com";
     public static final String WRONG_EMAIL = "smm@gm.com";
     public static final String OLD_PASSWORD_FOR_PASS_CHANGE = "Smith007$";
