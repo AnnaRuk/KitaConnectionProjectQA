@@ -29,7 +29,7 @@ public class SignUpPage extends BasePage{
 
     public SignUpPage enterPersonalData(String firstName, String lastName,
                                         String email, String password, 
-                                        String confirmPassword, /*String role*/) {
+                                        String confirmPassword /*String role*/) {
         type(fName,firstName);
         type(lName,lastName);
         type(userEmail,email);
@@ -61,7 +61,7 @@ public class SignUpPage extends BasePage{
     }*/
 
 
-    @FindBy(???????)
+    @FindBy(id = "agreeCheck")
     WebElement agreementCheckbox;
     public SignUpPage selectAgreementCheckbox() {
         click(agreementCheckbox);
@@ -75,10 +75,10 @@ public class SignUpPage extends BasePage{
         return this;
     }
 
-    @FindBy(xpath = "//a[.='Sign Out']")
-    WebElement signOut;
-    public HomePage verifySignOutBtnIsPresent(String signOutBtn) {
-        Assert.assertTrue(shouldHaveText(signOut,signOutBtn,10));
+    @FindBy(xpath = "//div[.='Registration completed successfully! A registratio']")
+    WebElement signUpMessage;
+    public HomePage verifySignUpMessageIsPresent(String message) {
+        Assert.assertTrue(shouldHaveText(signUpMessage,message,10));
         return new HomePage(driver);
     }
 

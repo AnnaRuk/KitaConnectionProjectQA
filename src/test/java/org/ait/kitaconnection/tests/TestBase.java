@@ -15,7 +15,7 @@ public class TestBase {
     @BeforeMethod
     public void init() {
        driver = new ChromeDriver();
-       driver.get("http://localhost:5173/");
+       driver.get("https://kitaconnection-app-9wbbe.ondigitalocean.app/kita-connection/");//http://localhost:5173/");
        driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

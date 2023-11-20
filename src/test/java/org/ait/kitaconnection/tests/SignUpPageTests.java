@@ -21,7 +21,8 @@ public class SignUpPageTests extends TestBase{
                 .selectRole(UserData.ROLE)
                 .selectAgreementCheckbox()
                 .signUp()
-                .verifySignOutBtnIsPresent("Sign Out");
+                .verifySignUpMessageIsPresent("Registration completed successfully! " +
+                        "A registration confirmation e-mail has been sent to your e-mail address.");
     }
 
 
