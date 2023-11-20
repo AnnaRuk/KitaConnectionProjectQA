@@ -21,8 +21,7 @@ public class ManagerAccountPageTests extends TestBase{
 
     @Test
     public void fillMyDataForm() {
-        new ManagerAccountPage(driver).inputData(UserData.FIRST_NAME,UserData.LAST_NAME, EMAIL,
-                        UserData.POSTCODE,UserData.CITY,UserData.ADDRESS)
+        new ManagerAccountPage(driver).inputData(UserData.POSTCODE,UserData.CITY,UserData.ADDRESS)
                 .enterBirthDate(UserData.DATE)
                 .save();
     }
@@ -35,17 +34,21 @@ public class ManagerAccountPageTests extends TestBase{
     }*/
 
     @Test
-    public void fillMyKindergartenForm() {
-        new ManagerAccountPage(driver).inputKindergartenData(KindergartensData.TITLE,KindergartensData.POSTCODE,
-                        KindergartensData.CITY,KindergartensData.ADDRESS,KindergartensData.CONTACTS,
-                        KindergartensData.CAPACITY,KindergartensData.DESCRIPTION)
+    public void addMyKitaTest() {
+        new ManagerAccountPage(driver).addKita()
+                .editKindergartenData(KindergartensData.TITLE,KindergartensData.ADDRESS,
+                        KindergartensData.POSTCODE, KindergartensData.CITY,KindergartensData.CAPACITY,
+                        KindergartensData.DESCRIPTION)
                 .uploadPicture(KindergartensData.PHOTO_PATH)
-                .saveKita();
+                .editData();
     }
 
     @Test
     public void checkBrokenImagesAllKitasPage() {
+
         new AllKitasPage(driver).verifyLinksInAllKitasPage();
     }
+
+
 
 }

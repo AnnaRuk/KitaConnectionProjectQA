@@ -15,7 +15,7 @@ public class AllKitasPageWithoutSignInTests extends TestBase{
         new HomePage(driver).selectAllKindergartens();
     }
 
-    @FindBy(id = "kTableContainer")
+    @FindBy(id = "kListTitle")
     WebElement kindergartensListTitle;
     @Test
     public void kitasListWithoutSignInTest() {

@@ -26,7 +26,7 @@ public class AllKitasPageWithSignInTests extends TestBase{
     }
 
     @Test
-    public void chooseCityBtnTest() {
+    public void allCitiesBtnTest() {
         new AllKitasPage(driver).selectCity(KindergartensData.CITY)
                 .verifyListIsDisplayed(KindergartensData.CITY);
     }

@@ -11,33 +11,28 @@ public class ManagerAccountPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(???????????)
-    WebElement fName;
-    @FindBy(???????????)
-    WebElement lName;
-    @FindBy(???????????)
-    WebElement email;
-    @FindBy(???????????)
+    @FindBy(id = "postcode-input")
     WebElement postCode;
-    @FindBy(???????????)
+    @FindBy(id = "city-input")
     WebElement city;
-    @FindBy(???????????)
+    @FindBy(id = "address-input")
     WebElement address;
 
-    public ManagerAccountPage inputData(String firstName, String lastName, String userEmail,
+    @FindBy(id = "phone-input")
+    WebElement phoneField;
+
+    public ManagerAccountPage inputData(/*String firstName, String lastName, String userEmail,*/
                                      String userPostcode, String userCity, String userAddress) {
-        type(fName,firstName);
-        type(lName,lastName);
-        type(email,userEmail);
+
         type(postCode,userPostcode);
         type(city,userCity);
         type(address,userAddress);
         return this;
     }
 
-    @FindBy(?????????????)
+    @FindBy(id = "dateOfBirth-input")
     WebElement dateOfBirthInput;
-    public UserAccountPage enterBirthDate(String date) {
+    public ManagerAccountPage enterBirthDate(String date) {
         click(dateOfBirthInput);
 
         String os = System.getProperty("os.name");
@@ -54,14 +49,14 @@ public class ManagerAccountPage extends BasePage{
         return this;
     }
 
-    @FindBy(?????????????)
+    @FindBy(xpath = "//button[.='Save Data']")
     WebElement saveBtn;
     public ManagerAccountPage save() {
         click(saveBtn);
         return this;
     }
 
-    @FindBy(???????????)
+  /*  @FindBy(???????????)
     WebElement oldPassField;
 
     @FindBy(???????????)
@@ -82,32 +77,29 @@ public class ManagerAccountPage extends BasePage{
     public ManagerAccountPage savePass() {
         click(savePassBtn);
         return this;
-    }
+    }*/
 
-    @FindBy(?????????)
+    @FindBy(id = "cKTitle-input")
     WebElement titleField;
-    @FindBy(?????????)
+    @FindBy(id = "cKPostcode-input")
     WebElement postcodeField;
-    @FindBy(?????????)
+    @FindBy(id = "cKCity-input")
     WebElement cityField;
-    @FindBy(?????????)
+    @FindBy(id = "cKAddress-input")
     WebElement addressField;
-    @FindBy(?????????)
-    WebElement contactsField;
-    @FindBy(?????????)
+    @FindBy(id = "cKCapacity-input")
     WebElement capacityField;
-    @FindBy(?????????)
+    @FindBy(id = "cKFileSelector")
     WebElement uploadPic;
-    @FindBy(?????????)
+    @FindBy(id = "cKDescription")
     WebElement descriptionField;
-    public ManagerAccountPage inputKindergartenData(String title,String postCode,String city,
-                                                    String address, String contacts,String capacity,
-                                                    String description) {
+    public ManagerAccountPage editKindergartenData(String title, String address, String postCode,
+                                                   String city, String capacity,
+                                                   String description) {
         type(titleField,title);
+        type(addressField,address);
         type(postcodeField,postCode);
         type(cityField,city);
-        type(addressField,address);
-        type(contactsField,contacts);
         type(capacityField,capacity);
         type(descriptionField,description);
 
@@ -116,15 +108,29 @@ public class ManagerAccountPage extends BasePage{
 
 
     public ManagerAccountPage uploadPicture(String photoPath) {
-        uploadPic.sendKeys(photoPath); // TODO check Open file btn!!!!
+        uploadPic.sendKeys(photoPath);
 
         return this;
     }
 
-    @FindBy(????????)
-    WebElement saveBtnKita;
-    public ManagerAccountPage saveKita() {
-        click(saveBtnKita);
+    @FindBy(xpath = "//button[.='Edit Data']")
+    WebElement editDataBtn;
+    public ManagerAccountPage editData() {
+        click(editDataBtn);
+        return this;
+    }
+
+    @FindBy(xpath = "//button[.='My Kindergarten']")
+    WebElement myKitaLink;
+    public ManagerAccountPage selectMyKitaLink() {
+        click(myKitaLink);
+        return this;
+    }
+
+    @FindBy(xpath = "//button[.='Add a Kindergarten']")
+    WebElement addKitaBtn;
+    public ManagerAccountPage addKita() {
+        click(addKitaBtn);
         return this;
     }
 }

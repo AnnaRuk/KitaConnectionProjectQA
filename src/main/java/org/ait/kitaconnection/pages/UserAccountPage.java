@@ -12,28 +12,22 @@ public class UserAccountPage extends BasePage {
         super(driver);
     }
 
-   @FindBy(???????????)
-    WebElement fName;
-    @FindBy(???????????)
-    WebElement lName;
-    @FindBy(???????????)
-    WebElement email;
-    @FindBy(???????????)
+    @FindBy(id = "postcode-input")
     WebElement postCode;
-    @FindBy(???????????)
+    @FindBy(id = "city-input")
     WebElement city;
-    @FindBy(???????????)
+    @FindBy(id = "address-input")
     WebElement address;
 
-    @FindBy(????????)
+    @FindBy(id = "phone-input")
     WebElement phoneField;
 
-    public UserAccountPage inputData(String firstName, String lastName, String userEmail,
+    public UserAccountPage inputData(/*String firstName, String lastName, String userEmail,*/
                                      String userPostcode, String userCity, String userAddress,
                                      String phone) {
-                type(fName,firstName);
-                type(lName,lastName);
-                type(email,userEmail);
+                //type(fName,firstName);
+                //type(lName,lastName);
+                //type(email,userEmail);
                 type(postCode,userPostcode);
                 type(city,userCity);
                 type(address,userAddress);
@@ -41,7 +35,7 @@ public class UserAccountPage extends BasePage {
         return this;
     }
 
-    @FindBy(?????????????)
+    @FindBy(id = "dateOfBirth-input")
     WebElement dateOfBirthInput;
     public UserAccountPage enterBirthDate(String date) {
         click(dateOfBirthInput);
@@ -60,14 +54,14 @@ public class UserAccountPage extends BasePage {
         return this;
     }
 
-    @FindBy(?????????????)
+    @FindBy(xpath = "//button[.='Save Data']")
     WebElement saveBtn;
     public UserAccountPage save() {
         click(saveBtn);
         return this;
     }
 
-   @FindBy(???????????)
+   /*@FindBy(???????????)
    WebElement oldPassField;
 
     @FindBy(???????????)
@@ -89,18 +83,18 @@ public class UserAccountPage extends BasePage {
     public UserAccountPage savePass() {
         click(savePassBtn);
         return this;
-    }
+    }*/
 
-    @FindBy(?????????)
+    @FindBy(xpath = "//button[.='My Children']")
     WebElement myChildrenLink;
     public UserAccountPage selectMyChildrenLink() {
         click(myChildrenLink);
         return new UserAccountPage(driver);
     }
 
-    @FindBy(????????????)
+    @FindBy(id = "cNewFirstName-input")
     WebElement childsFirstNameField;
-    @FindBy(????????????)
+    @FindBy(id = "cNewLastName-input")
     WebElement childsLastNameField;
 
     public UserAccountPage inputChildrenData(String firstName, String lastName) {
@@ -109,7 +103,7 @@ public class UserAccountPage extends BasePage {
         return this;
     }
 
-    @FindBy(????????????)
+    @FindBy(id = "cNewDateOfBirth-input")
     WebElement childsBirthDateField;
 
     public UserAccountPage enterChildrensBirthDate(String date) {
@@ -129,20 +123,20 @@ public class UserAccountPage extends BasePage {
         return this;
     }
 
-    @FindBy(???????)
+    @FindBy(id = "saveNewChildBtn")
     WebElement saveDataBtn;
     public UserAccountPage saveData() {
         click(saveDataBtn);
         return this;
     }
 
-    @FindBy(????????????)
+    @FindBy(xpath = "//input[@value='MALE']")
     WebElement male;
 
-    @FindBy(????????????)
+    @FindBy(xpath = "//input[@value='FEMALE']")
     WebElement female;
 
-    @FindBy(?????????????)
+    @FindBy(xpath = "//input[@value='DIVERSE']")
     WebElement other;
     public UserAccountPage chooseGender(String gender) {
 
@@ -156,40 +150,97 @@ public class UserAccountPage extends BasePage {
             return this;
     }
 
-    @FindBy(????????)
-    WebElement cityField;
-    public UserAccountPage selectCityField(String city) {
-        click(cityField);
-        cityField.sendKeys(city);
-        cityField.sendKeys(Keys.ENTER);
+    @FindBy(id = "citySelector")
+    WebElement allCitiesSelector;
+    public UserAccountPage allCitiesField(String city) {
+        click(allCitiesSelector);
+        allCitiesSelector.sendKeys(city);
+        allCitiesSelector.sendKeys(Keys.ENTER);
         return this;
     }
 
-    @FindBy(????????????????)
-    WebElement findKindergarten;
-    public UserAccountPage selectFindKindergartenLink() {
-        click(findKindergarten);
+    @FindBy(id = "aKindergartens")
+    WebElement kindergartens;
+    public UserAccountPage selectKindergartensBtn() {
+        click(kindergartens);
         return new UserAccountPage(driver);
     }
-
-    @FindBy(????????)
+    @FindBy(id = "aKindergartens")
+    WebElement kindergartensList;
+    public UserAccountPage selectKindergartensList() {
+        click(kindergartensList);
+        return this;
+    }
+    @FindBy(id = "iconTitle")
     WebElement kitaLink;
     public KitaPage selectKindergarten() {
         click(kitaLink);
         return new KitaPage(driver);
     }
 
-    @FindBy(???????????)
+    /*@FindBy()
     WebElement getMyFavorites;
     public UserAccountPage selectMyFavoritesLink() {
         click(getMyFavorites);
         return new UserAccountPage(driver);
     }
 
-    @FindBy(??????????)
+    @FindBy(xpath = "//button[.='My favorites']")
     WebElement myFavorites;
     public UserAccountPage verifyFavoritesListIsPresent(String title) {
         Assert.assertTrue(shouldHaveText(myFavorites,title,10));
         return null;
+    }*/
+
+    @FindBy(xpath = "//button[.='My Data']")
+    WebElement myDataLink;
+    public UserAccountPage selectMyDataLink() {
+        click(myDataLink);
+        return this;
     }
+
+    @FindBy(xpath = "//button[.='Edit Data']")
+    WebElement editDataBtn;
+    public UserAccountPage editData() {
+        click(editDataBtn);
+        return this;
+    }
+
+
+    @FindBy(id = "#addChildBtn")
+    WebElement addChildBtn;
+    public UserAccountPage addChildLink() {
+        click(addChildBtn);
+        return this;
+    }
+
+
+    @FindBy(id = "cEditBtn1")
+    WebElement editBtn;
+    public UserAccountPage selectEditBtn() {
+        click(editBtn);
+        return this;
+    }
+
+    @FindBy(id = "kFirstName-input")
+    WebElement firstNameInpit;
+    @FindBy(id = "kLastName-input")
+    WebElement lastNameInput;
+    @FindBy(id = "kDateOfBirth-input")
+    WebElement birthDateInput;
+    public UserAccountPage enterEditedData() {
+        type(firstNameInpit,"Cara");
+        type(lastNameInput,"Smith");
+        type(birthDateInput,"20.06.2019");
+        return this;
+    }
+
+    @FindBy(id = "cSaveDataBtn")
+    WebElement saveChangesBtn;
+    public UserAccountPage saveChanges() {
+        click(saveChangesBtn);
+        return this;
+    }
+
+
 }
