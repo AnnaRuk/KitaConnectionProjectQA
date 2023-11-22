@@ -1,0 +1,9 @@
+org\ait\kitaconnection\tests\SignInPageTests.class
+org\ait\kitaconnection\tests\SignUpPageTests.class
+org\ait\kitaconnection\tests\ManagerAccountPageTests.class
+org\ait\kitaconnection\tests\HomePageTests.class
+org\ait\kitaconnection\tests\TestBase.class
+org\ait\kitaconnection\tests\KitaPageTests.class
+org\ait\kitaconnection\tests\AllKitasPageWithSignInTests.class
+org\ait\kitaconnection\tests\UserAccountPageTests.class
+org\ait\kitaconnection\tests\AllKitasPageWithoutSignInTests.class
