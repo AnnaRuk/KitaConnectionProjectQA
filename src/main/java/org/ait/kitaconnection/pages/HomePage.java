@@ -29,12 +29,6 @@ public class HomePage extends BasePage{
         return this;
     }
 
-    @FindBy(id = "signOutBtn")
-    WebElement signUpLink;
-    public SignUpPage selectSignUp() {
-        click(signUpLink);
-        return new SignUpPage(driver);
-    }
 
     @FindBy(id = "allKitasBtn")
     WebElement allKindergartensLink;
