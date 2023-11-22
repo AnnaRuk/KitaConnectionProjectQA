@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-22T11:46:32 MEZ" name="Quick" finished-at="2023-11-22T11:47:01 MEZ" duration-ms="29100">
+    <groups>
+    </groups>
+    <test started-at="2023-11-22T11:46:32 MEZ" name="Quick" finished-at="2023-11-22T11:47:01 MEZ" duration-ms="29100">
+      <class name="org.ait.kitaconnection.tests.SignInPageTests">
+        <test-method is-config="true" signature="init()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:32 MEZ" name="init" finished-at="2023-11-22T11:46:43 MEZ" duration-ms="10424" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:43 MEZ" name="precondition" finished-at="2023-11-22T11:46:43 MEZ" duration-ms="459" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="signInPositiveTest()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:43 MEZ" name="signInPositiveTest" finished-at="2023-11-22T11:46:45 MEZ" duration-ms="1672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInPositiveTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:45 MEZ" name="tearDown" finished-at="2023-11-22T11:46:46 MEZ" duration-ms="1133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="init()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:46 MEZ" name="init" finished-at="2023-11-22T11:46:52 MEZ" duration-ms="6181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:52 MEZ" name="precondition" finished-at="2023-11-22T11:46:52 MEZ" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="signInWithWrongEmailNegativeTest()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:52 MEZ" name="signInWithWrongEmailNegativeTest" finished-at="2023-11-22T11:46:53 MEZ" duration-ms="980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithWrongEmailNegativeTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:53 MEZ" name="tearDown" finished-at="2023-11-22T11:46:54 MEZ" duration-ms="604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="init()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:54 MEZ" name="init" finished-at="2023-11-22T11:46:59 MEZ" duration-ms="5152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:59 MEZ" name="precondition" finished-at="2023-11-22T11:46:59 MEZ" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="signOutPositiveTest()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:46:59 MEZ" name="signOutPositiveTest" finished-at="2023-11-22T11:47:01 MEZ" duration-ms="1184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signOutPositiveTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.ait.kitaconnection.tests.SignInPageTests@3576ddc2]" started-at="2023-11-22T11:47:01 MEZ" name="tearDown" finished-at="2023-11-22T11:47:01 MEZ" duration-ms="714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.ait.kitaconnection.tests.SignInPageTests -->
+    </test> <!-- Quick -->
+  </suite> <!-- Quick -->
+</testng-results>

@@ -1,0 +1,15 @@
+org\ait\kitaconnection\pages\RequestsPage.class
+org\ait\kitaconnection\data\ChildrensData.class
+org\ait\kitaconnection\pages\AllKitasPage.class
+org\ait\kitaconnection\pages\ManagerAccountPage.class
+org\ait\kitaconnection\data\UserData.class
+org\ait\kitaconnection\pages\SignUpPage.class
+org\ait\kitaconnection\pages\UserAccountPage.class
+org\ait\kitaconnection\utils\MyListener.class
+org\ait\kitaconnection\pages\HomePage.class
+org\ait\kitaconnection\pages\BasePage.class
+org\ait\kitaconnection\pages\SignInPage.class
+org\ait\kitaconnection\pages\KitaPage.class
+org\ait\kitaconnection\data\KindergartensData.class
+org\ait\kitaconnection\pages\DialoguePage.class
+org\ait\kitaconnection\data\ManagerData.class
