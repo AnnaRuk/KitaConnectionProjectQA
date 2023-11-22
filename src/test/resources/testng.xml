@@ -1,10 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Quick" verbose="1" >
+<suite name="KC_Tests" verbose="1" >
 
-    <test name="Quick" >
+    <test name="KC_Tests" >
         <classes>
             <class name="org.ait.kitaconnection.tests.SignInPageTests" />
+            <class name="org.ait.kitaconnection.tests.AllKitasPageWithoutSignInTests" />
+            <class name="org.ait.kitaconnection.tests.AllKitasPageWithSignInTests" />
+            <class name="org.ait.kitaconnection.tests.HomePageTests" />
+            <class name="org.ait.kitaconnection.tests.KitaPageTests" />
+            <class name="org.ait.kitaconnection.tests.ManagerAccountPageTests" />
+            <class name="org.ait.kitaconnection.tests.UserAccountPageTests" />
         </classes>
     </test>
 
