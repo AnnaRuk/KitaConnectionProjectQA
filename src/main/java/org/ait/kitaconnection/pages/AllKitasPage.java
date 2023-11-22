@@ -12,7 +12,7 @@ public class AllKitasPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(id = "role-input")
+    @FindBy(id = "allKitasBtn")
     WebElement chosenCity;
     public AllKitasPage selectCity(String city) {
         click(chosenCity);
@@ -28,7 +28,7 @@ public class AllKitasPage extends BasePage{
         return new AllKitasPage(driver);
     }
 
-    @FindBy(xpath = "//a[@href='#/kindergartens/1']/div")
+    @FindBy(xpath = "//div[.='Kita im BMEL']")
     WebElement kitaLink;
     public KitaPage selectKita() {
         click(kitaLink);
@@ -64,4 +64,10 @@ public class AllKitasPage extends BasePage{
     }
 
 
+    @FindBy(id = "kListTitle")
+    WebElement kindergartensListTitle;
+    public AllKitasPage verifyKitaTitleIsPresent() {
+        Assert.assertTrue(shouldHaveText(kindergartensListTitle,"Kindergartens",10));
+        return this;
+    }
 }

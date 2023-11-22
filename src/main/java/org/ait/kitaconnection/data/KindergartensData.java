@@ -2,7 +2,7 @@ package org.ait.kitaconnection.data;
 
 public class KindergartensData {
 
-    public static final String TITLE = "Kita Central";
+    public static final String TITLE = "Kita im BMEL";
     public static final String POSTCODE = "10117";
     public static final String CITY = "Berlin";
     public static final String ADDRESS = "Brandenburger Str. 40";

@@ -1,13 +1,13 @@
 package org.ait.kitaconnection.tests;
 
 import org.ait.kitaconnection.data.KindergartensData;
-import org.ait.kitaconnection.data.UserData;
+import org.ait.kitaconnection.data.ManagerData;
 import org.ait.kitaconnection.pages.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.ait.kitaconnection.data.UserData.EMAIL;
-import static org.ait.kitaconnection.data.UserData.PASSWORD;
+import static org.ait.kitaconnection.data.ManagerData.EMAIL;
+import static org.ait.kitaconnection.data.ManagerData.PASSWORD;
 
 public class ManagerAccountPageTests extends TestBase{
 
@@ -15,14 +15,16 @@ public class ManagerAccountPageTests extends TestBase{
     public void precondition() {
         new HomePage(driver).selectSignIn();
         new SignInPage(driver).signIn(EMAIL, PASSWORD)
-                .verifySignOutBtnIsPresent("Sign out");
+                .verifyMyAccountBtnIsPresent("My Account");
         new HomePage(driver).selectMyAccManagerLink();
     }
 
     @Test
     public void fillMyDataForm() {
-        new ManagerAccountPage(driver).inputData(UserData.POSTCODE,UserData.CITY,UserData.ADDRESS)
-                .enterBirthDate(UserData.DATE)
+        new ManagerAccountPage(driver).selectMyDataLink()
+                .editData()
+                .inputData(ManagerData.POSTCODE, ManagerData.CITY, ManagerData.ADDRESS)
+                .enterBirthDate(ManagerData.DATE)
                 .save();
     }
 
@@ -34,13 +36,14 @@ public class ManagerAccountPageTests extends TestBase{
     }*/
 
     @Test
-    public void addMyKitaTest() {
-        new ManagerAccountPage(driver).addKita()
+    public void editMyKitaTest() {
+        new ManagerAccountPage(driver).selectMyKitaLink()
+                .selectEditBtn()
                 .editKindergartenData(KindergartensData.TITLE,KindergartensData.ADDRESS,
                         KindergartensData.POSTCODE, KindergartensData.CITY,KindergartensData.CAPACITY,
                         KindergartensData.DESCRIPTION)
                 .uploadPicture(KindergartensData.PHOTO_PATH)
-                .editData();
+                .save();
     }
 
     @Test

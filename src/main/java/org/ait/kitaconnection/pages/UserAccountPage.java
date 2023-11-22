@@ -35,21 +35,10 @@ public class UserAccountPage extends BasePage {
         return this;
     }
 
-    @FindBy(id = "dateOfBirth-input")
+    @FindBy(xpath = "//div[.='Birthday:']")
     WebElement dateOfBirthInput;
     public UserAccountPage enterBirthDate(String date) {
-        click(dateOfBirthInput);
-
-        String os = System.getProperty("os.name");
-        System.out.println("My OS is " + os);
-
-        if (os.startsWith("Mac")) {
-            dateOfBirthInput.sendKeys(Keys.COMMAND, "a");
-        } else {
-            dateOfBirthInput.sendKeys(Keys.CONTROL, "a");
-        }
-        dateOfBirthInput.sendKeys(date);
-        dateOfBirthInput.sendKeys(Keys.ENTER);
+        type(dateOfBirthInput,date);
 
         return this;
     }
@@ -58,32 +47,9 @@ public class UserAccountPage extends BasePage {
     WebElement saveBtn;
     public UserAccountPage save() {
         click(saveBtn);
-        return this;
+        return new UserAccountPage(driver);
     }
 
-   /*@FindBy(???????????)
-   WebElement oldPassField;
-
-    @FindBy(???????????)
-    WebElement newPassField;
-
-    @FindBy(???????????)
-    WebElement confirmPassField;
-    //???????NADO LI VNESTI ETI DANNYE V USERDATA???????????
-    public UserAccountPage changePassword(String oldPass, String newPass, String confirmPass) {
-        type(oldPassField,oldPass);
-        type(newPassField,newPass);
-        type(confirmPassField,confirmPass);
-
-        return this;
-    }
-
-    @FindBy(????????????)
-    WebElement savePassBtn;
-    public UserAccountPage savePass() {
-        click(savePassBtn);
-        return this;
-    }*/
 
     @FindBy(xpath = "//button[.='My Children']")
     WebElement myChildrenLink;
@@ -107,18 +73,8 @@ public class UserAccountPage extends BasePage {
     WebElement childsBirthDateField;
 
     public UserAccountPage enterChildrensBirthDate(String date) {
-        click(childsBirthDateField);
 
-        String os = System.getProperty("os.name");
-        System.out.println("My OS is " + os);
-
-        if (os.startsWith("Mac")) {
-            dateOfBirthInput.sendKeys(Keys.COMMAND, "a");
-        } else {
-            dateOfBirthInput.sendKeys(Keys.CONTROL, "a");
-        }
-        dateOfBirthInput.sendKeys(date);
-        dateOfBirthInput.sendKeys(Keys.ENTER);
+        type(childsBirthDateField,date);
 
         return this;
     }
@@ -163,9 +119,9 @@ public class UserAccountPage extends BasePage {
     WebElement kindergartens;
     public UserAccountPage selectKindergartensBtn() {
         click(kindergartens);
-        return new UserAccountPage(driver);
+        return this;
     }
-    @FindBy(id = "aKindergartens")
+    @FindBy(xpath = "//a[@id='aKnav']//button[@id='aKindergartens']")
     WebElement kindergartensList;
     public UserAccountPage selectKindergartensList() {
         click(kindergartensList);
@@ -178,19 +134,6 @@ public class UserAccountPage extends BasePage {
         return new KitaPage(driver);
     }
 
-    /*@FindBy()
-    WebElement getMyFavorites;
-    public UserAccountPage selectMyFavoritesLink() {
-        click(getMyFavorites);
-        return new UserAccountPage(driver);
-    }
-
-    @FindBy(xpath = "//button[.='My favorites']")
-    WebElement myFavorites;
-    public UserAccountPage verifyFavoritesListIsPresent(String title) {
-        Assert.assertTrue(shouldHaveText(myFavorites,title,10));
-        return null;
-    }*/
 
     @FindBy(xpath = "//button[.='My Data']")
     WebElement myDataLink;
@@ -207,7 +150,7 @@ public class UserAccountPage extends BasePage {
     }
 
 
-    @FindBy(id = "#addChildBtn")
+    @FindBy(id = "addChildBtn")
     WebElement addChildBtn;
     public UserAccountPage addChildLink() {
         click(addChildBtn);
@@ -215,7 +158,7 @@ public class UserAccountPage extends BasePage {
     }
 
 
-    @FindBy(id = "cEditBtn1")
+    @FindBy(id = "cEditBtn10")
     WebElement editBtn;
     public UserAccountPage selectEditBtn() {
         click(editBtn);
@@ -243,4 +186,10 @@ public class UserAccountPage extends BasePage {
     }
 
 
+    @FindBy(xpath = "//tbody/tr[1]/td[2]")
+    WebElement chosenCityField;
+    public UserAccountPage verifyChosenCityIsPresent(String city) {
+        Assert.assertTrue(shouldHaveText(chosenCityField,city,10));
+        return this;
+    }
 }

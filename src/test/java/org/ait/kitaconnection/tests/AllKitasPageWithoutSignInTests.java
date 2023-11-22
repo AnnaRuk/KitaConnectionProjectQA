@@ -19,7 +19,7 @@ public class AllKitasPageWithoutSignInTests extends TestBase{
     WebElement kindergartensListTitle;
     @Test
     public void kitasListWithoutSignInTest() {
-        new AllKitasPage(driver).isTextPresent(kindergartensListTitle,"Kindergartens");
+        new AllKitasPage(driver).verifyKitaTitleIsPresent();
     }
 
 

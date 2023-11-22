@@ -16,7 +16,7 @@ public class SignInPage extends BasePage{
     @FindBy(id = "password-input")
     WebElement passwordField;
 
-    @FindBy(xpath = "//button[.='sigh In']")
+    @FindBy(xpath = "//body/div[@id='root']/div[@id='loginAllContainer']/form[@id='loginForm']/div[@id='loginContainer']/button[1]")
     WebElement loginButton;
 
     public HomePage signIn(String userEmail, String password) {

@@ -36,5 +36,10 @@ public class HomePageTests extends TestBase{
                 .verifyContactInfoIsPresent();
     }
 
+    @Test
+    public void checkBrokenLinks() {
+        new HomePage(driver).verifyLinksOnFooter();
+    }
+
 
 }

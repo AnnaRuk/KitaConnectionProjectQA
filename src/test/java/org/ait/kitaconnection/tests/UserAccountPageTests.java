@@ -1,6 +1,7 @@
 package org.ait.kitaconnection.tests;
 
 import org.ait.kitaconnection.data.ChildrensData;
+import org.ait.kitaconnection.data.ManagerData;
 import org.ait.kitaconnection.data.UserData;
 import org.ait.kitaconnection.pages.AllKitasPage;
 import org.ait.kitaconnection.pages.HomePage;
@@ -9,29 +10,25 @@ import org.ait.kitaconnection.pages.UserAccountPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.ait.kitaconnection.data.UserData.EMAIL;
-import static org.ait.kitaconnection.data.UserData.PASSWORD;
+import static org.ait.kitaconnection.data.ManagerData.EMAIL;
+import static org.ait.kitaconnection.data.ManagerData.PASSWORD;
 
 public class UserAccountPageTests extends TestBase {
 
     @BeforeMethod
     public void precondition() {
         new HomePage(driver).selectSignIn();
-        new SignInPage(driver).signIn(EMAIL, PASSWORD)
-                .verifySignOutBtnIsPresent("Sign out");
+        new SignInPage(driver).signIn(UserData.EMAIL, UserData.PASSWORD);
         new HomePage(driver).selectMyAccLink();
     }
 
     @Test
     public void fillMyDataForm() {
         new UserAccountPage(driver).selectMyDataLink()
-                .selectMyDataLink()
                 .editData()
                 .inputData(/*UserData.FIRST_NAME,UserData.LAST_NAME, EMAIL,*/
-                        UserData.POSTCODE,UserData.CITY,UserData.ADDRESS,UserData.PHONE)
-                .chooseGender(UserData.GENDER)
-                .enterBirthDate("12.11.1980")
-                .enterBirthDate(UserData.DATE)
+                        UserData.POSTCODE, UserData.CITY, UserData.ADDRESS, UserData.PHONE)
+                .chooseGender(ManagerData.GENDER)
                 .save();
     }
 
@@ -50,14 +47,12 @@ public class UserAccountPageTests extends TestBase {
                 .inputChildrenData(ChildrensData.FIRST_NAME,ChildrensData.LAST_NAME)
                 .enterChildrensBirthDate(ChildrensData.DATE)
                 .chooseGender(ChildrensData.GENDER)
-                //.addOneMoreChild() TODO ???????????
                 .saveData();
     }
 
     @Test
     public void correctChildrensData() {
         new UserAccountPage(driver).selectMyChildrenLink()
-                .addChildLink()
                 .selectEditBtn()
                 .enterEditedData()
                 .saveChanges();
@@ -67,8 +62,8 @@ public class UserAccountPageTests extends TestBase {
     public void findKindergartenTest() {
         new UserAccountPage(driver).selectKindergartensBtn()
                 .selectKindergartensList()
-        .allCitiesField("Berlin");
-        //Assert.assertTrue(); TODO ???????????
+                .allCitiesField("Berlin")
+                .verifyChosenCityIsPresent("Berlin");
     }
 
     @Test
@@ -76,7 +71,7 @@ public class UserAccountPageTests extends TestBase {
         new UserAccountPage(driver).selectKindergartensBtn()
                 .selectKindergartensList()
                 .selectKindergarten()
-                .verifyKitaTitleIsPresent("Kita F.A.I.R.play");
+                .verifyKitaTitleIsPresent("Kita im BMEL");
     }
 
    /* @Test

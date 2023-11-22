@@ -46,7 +46,7 @@ public abstract class BasePage {
 
     public void clickWithJSExecutor(WebElement element, int x, int y) {
 
-        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+       js.executeScript("window.scrollBy(" + x + "," + y + ")");
         element.click();
     }
 
