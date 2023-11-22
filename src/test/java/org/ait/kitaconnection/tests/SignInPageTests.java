@@ -5,7 +5,7 @@ import org.ait.kitaconnection.pages.SignInPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.ait.kitaconnection.data.UserData.*;
+import static org.ait.kitaconnection.data.ManagerData.*;
 
 public class SignInPageTests extends TestBase{
 
@@ -18,7 +18,7 @@ public class SignInPageTests extends TestBase{
     @Test
     public void signInPositiveTest() {
         new SignInPage(driver).signIn(EMAIL,PASSWORD)
-                .verifySignOutBtnIsPresent("Sign out");
+                .verifyMyAccountBtnIsPresent("My Account");
 
     }
 
@@ -31,7 +31,7 @@ public class SignInPageTests extends TestBase{
     @Test
     public void signOutPositiveTest() {
         new SignInPage(driver).signIn(EMAIL,PASSWORD)
-                .verifySignOutBtnIsPresent("Sign out")
+                .verifyMyAccountBtnIsPresent("My Account")
                 .signOut();
     }
 }

@@ -1,5 +1,6 @@
 package org.ait.kitaconnection.pages;
 
+import org.ait.kitaconnection.data.ManagerData;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +34,7 @@ public class ManagerAccountPage extends BasePage{
     @FindBy(id = "dateOfBirth-input")
     WebElement dateOfBirthInput;
     public ManagerAccountPage enterBirthDate(String date) {
-        click(dateOfBirthInput);
+       /* click(dateOfBirthInput);
 
         String os = System.getProperty("os.name");
         System.out.println("My OS is " + os);
@@ -44,7 +45,8 @@ public class ManagerAccountPage extends BasePage{
             dateOfBirthInput.sendKeys(Keys.CONTROL, "a");
         }
         dateOfBirthInput.sendKeys(date);
-        dateOfBirthInput.sendKeys(Keys.ENTER);
+        dateOfBirthInput.sendKeys(Keys.ENTER);*/
+        type(dateOfBirthInput,ManagerData.DATE);
 
         return this;
     }
@@ -131,6 +133,21 @@ public class ManagerAccountPage extends BasePage{
     WebElement addKitaBtn;
     public ManagerAccountPage addKita() {
         click(addKitaBtn);
+        return this;
+    }
+
+   @FindBy(xpath = "//button[.='My Data']")
+   WebElement myDataLink;
+    public ManagerAccountPage selectMyDataLink() {
+        click(myDataLink);
+        return this;
+    }
+
+    @FindBy(xpath = "//button[.='Edit Data']")
+    WebElement editBtn;
+    public ManagerAccountPage selectEditBtn() {
+        clickWithJSExecutor(editBtn,0,100);
+        //clickWithJSExecutor(editBtn,0,1100);
         return this;
     }
 }

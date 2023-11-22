@@ -60,7 +60,7 @@ public class KitaPage extends BasePage{
     @FindBy(id = "kRequestBTN")
     WebElement requestBtn;
     public KitaPage sendRequest() {
-        click(requestBtn);
+        clickWithJSExecutor(requestBtn,0,500);
         return this;
     }
 
@@ -71,19 +71,20 @@ public class KitaPage extends BasePage{
     @FindBy(id = "kSendMessageBTN")
     WebElement sendMessageBtn;
     public KitaPage sendAMessage(String text) {
-        click(sendMessageField);
-        type(textArea,text);
-        click(sendMessageBtn);
+        //pause(1000);
+        clickWithJSExecutor(sendMessageField,0,400);
+        typeWithJSExecutor(textArea,text,0,300);
+        clickWithJSExecutor(sendMessageBtn,0,400);
         return this;
     }
 
     @FindBy(xpath = "//button[.='My Requests']")
     WebElement myRequestsBtn;
-    @FindBy(xpath = "//td[text()='lea sm']")
+    @FindBy(xpath = "//tbody/tr/td[4]")
     WebElement nameField;
-    public RequestsPage verifyRequestIsInRequestsList() {
+    public RequestsPage verifyRequestIsInRequestsList(String name) {
         click(myRequestsBtn);
-        Assert.assertTrue(shouldHaveText(nameField, ChildrensData.FIRST_NAME+" "+ChildrensData.LAST_NAME,10));
+        Assert.assertTrue(shouldHaveText(nameField, name,10));
         return new RequestsPage(driver);
     }
 
@@ -100,7 +101,7 @@ public class KitaPage extends BasePage{
 
     @FindBy(id = "aDialogueBtn")
     WebElement dialogueBtn;
-    @FindBy(xpath = "//button[.= 'Anthony Hopkins']")
+    @FindBy(xpath = "//button[.='Maria Kallas']")
     WebElement managerName;
 
     public DialoguePage verifyMessageIsInDialogues() {

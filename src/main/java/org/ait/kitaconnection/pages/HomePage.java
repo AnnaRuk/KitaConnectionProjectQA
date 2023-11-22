@@ -1,9 +1,12 @@
 package org.ait.kitaconnection.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
@@ -19,8 +22,10 @@ public class HomePage extends BasePage{
 
     @FindBy(id = "signOutBtn")
     WebElement signOut;
-    public HomePage verifySignOutBtnIsPresent(String signOutBtn) {
-        Assert.assertTrue(shouldHaveText(signOut,signOutBtn,10));
+    @FindBy(id = "myAccountBtn")
+    WebElement myAccountBtn;
+    public HomePage verifyMyAccountBtnIsPresent(String myAccount) {
+        Assert.assertTrue(shouldHaveText(myAccountBtn,myAccount,10));
         return this;
     }
 
@@ -138,6 +143,23 @@ public class HomePage extends BasePage{
     WebElement contactTitle;
     public HomePage verifyContactInfoIsPresent() {
         Assert.assertTrue(isTextPresent(contactTitle,"How You can contact us"));
+        return this;
+    }
+
+    public HomePage verifyLinksOnFooter() {
+
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+
+        System.out.println("Total number of links on the page: " + links.size());
+
+        for (int i = 0; i < links.size(); i++) {
+            WebElement link = links.get(i);
+            String linkUrl = link.getAttribute("href");
+
+            System.out.println("URL of link " + (i + 1) + " is " + linkUrl);
+            verifyLinks(linkUrl);
+        }
+
         return this;
     }
 }
