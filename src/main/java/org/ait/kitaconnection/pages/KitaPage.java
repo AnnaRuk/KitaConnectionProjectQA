@@ -60,7 +60,7 @@ public class KitaPage extends BasePage{
     @FindBy(id = "kRequestBTN")
     WebElement requestBtn;
     public KitaPage sendRequest() {
-        clickWithJSExecutor(requestBtn,0,500);
+        clickWithJSExecutor(requestBtn/*,0,500*/);
         return this;
     }
 
@@ -71,10 +71,9 @@ public class KitaPage extends BasePage{
     @FindBy(id = "kSendMessageBTN")
     WebElement sendMessageBtn;
     public KitaPage sendAMessage(String text) {
-        //pause(1000);
-        clickWithJSExecutor(sendMessageField,0,400);
+        clickWithJSExecutor(sendMessageField/*,0,400*/);
         typeWithJSExecutor(textArea,text,0,300);
-        clickWithJSExecutor(sendMessageBtn,0,400);
+        clickWithJSExecutor(sendMessageBtn/*,0,400*/);
         return this;
     }
 

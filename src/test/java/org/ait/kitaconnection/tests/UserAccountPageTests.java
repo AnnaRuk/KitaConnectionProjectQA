@@ -26,18 +26,12 @@ public class UserAccountPageTests extends TestBase {
     public void fillMyDataForm() {
         new UserAccountPage(driver).selectMyDataLink()
                 .editData()
-                .inputData(/*UserData.FIRST_NAME,UserData.LAST_NAME, EMAIL,*/
-                        UserData.POSTCODE, UserData.CITY, UserData.ADDRESS, UserData.PHONE)
+                .inputData(UserData.POSTCODE, UserData.CITY, UserData.ADDRESS, UserData.PHONE)
                 .chooseGender(ManagerData.GENDER)
                 .save();
     }
 
-   /* @Test
-    public void changePasswordInMyDataForm() {
-        new UserAccountPage(driver).changePassword(UserData.OLD_PASSWORD_FOR_PASS_CHANGE,
-                UserData.PASSWORD,UserData.CONFIRM_PASSWORD)
-                .savePass();
-    }*/
+
 
     @Test
     public void fillMyChildrenForm() {
@@ -74,12 +68,7 @@ public class UserAccountPageTests extends TestBase {
                 .verifyKitaTitleIsPresent("Kita im BMEL");
     }
 
-   /* @Test
-    public void myFavoritesTest() {
-        new UserAccountPage(driver).selectKindergartensBtn()
-                .selectMyFavoritesLink()
-                .verifyFavoritesListIsPresent("My Favorites");
-    }*/
+
 
     @Test
     public void checkBrokenImagesAllKitasPage() {
