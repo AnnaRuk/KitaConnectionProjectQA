@@ -22,22 +22,18 @@ public class ManagerAccountPageTests extends TestBase{
     @Test
     public void fillMyDataForm() {
         new ManagerAccountPage(driver).selectMyDataLink()
-                .editData()
+                .selectEditBtn()
                 .inputData(ManagerData.POSTCODE, ManagerData.CITY, ManagerData.ADDRESS)
                 .enterBirthDate(ManagerData.DATE)
                 .save();
     }
 
-  /*  @Test
-    public void changePasswordInMyDataForm() {
-        new ManagerAccountPage(driver).changePassword(UserData.OLD_PASSWORD_FOR_PASS_CHANGE,
-                        UserData.PASSWORD,UserData.CONFIRM_PASSWORD)
-                .savePass();
-    }*/
 
     @Test
     public void editMyKitaTest() {
         new ManagerAccountPage(driver).selectMyKitaLink()
+                        .pause(1000);
+        new ManagerAccountPage(driver)
                 .selectEditBtn()
                 .editKindergartenData(KindergartensData.TITLE,KindergartensData.ADDRESS,
                         KindergartensData.POSTCODE, KindergartensData.CITY,KindergartensData.CAPACITY,

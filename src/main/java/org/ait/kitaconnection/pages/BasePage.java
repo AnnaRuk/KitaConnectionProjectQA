@@ -44,15 +44,29 @@ public abstract class BasePage {
         }
     }
 
-    public void clickWithJSExecutor(WebElement element, int x, int y) {
+    public void clickWithJSExecutor(WebElement element, int xOffset, int yOffset) {
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("window.scrollBy(" + xOffset + "," + yOffset + ")");
+        js.executeScript("arguments[0].click();", element);
+    }
 
-       js.executeScript("window.scrollBy(" + x + "," + y + ")");
+    public void clickWithJSExecutor(WebElement element) {
+        scrollToElement(element);
         element.click();
     }
 
+    public void scrollToElement(WebElement element) {
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void resizeBrowserWindow(int width, int height) {
+        js.executeScript("window.innerWidth = arguments[0]; window.innerHeight = arguments[1];", width, height);
+    }
+
+
     public void typeWithJSExecutor(WebElement element, String text, int x, int y){
         if (text != null){
-            clickWithJSExecutor(element, x, y);
+            clickWithJSExecutor(element/*, x, y*/);
             element.clear();
             element.sendKeys(text);
         }
@@ -71,11 +85,11 @@ public abstract class BasePage {
     public void verifyLinks(String linkUrl) {
         try{
             URL url = new URL(linkUrl);
-            //create connection and
+
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(5000);
             connection.connect();
-            //get response status code
+
             if (connection.getResponseCode() >= 400) {
                 System.out.println(linkUrl + " - " + connection.getResponseMessage() + " is a broken link");
             } else {

@@ -22,12 +22,8 @@ public class UserAccountPage extends BasePage {
     @FindBy(id = "phone-input")
     WebElement phoneField;
 
-    public UserAccountPage inputData(/*String firstName, String lastName, String userEmail,*/
-                                     String userPostcode, String userCity, String userAddress,
+    public UserAccountPage inputData(String userPostcode, String userCity, String userAddress,
                                      String phone) {
-                //type(fName,firstName);
-                //type(lName,lastName);
-                //type(email,userEmail);
                 type(postCode,userPostcode);
                 type(city,userCity);
                 type(address,userAddress);

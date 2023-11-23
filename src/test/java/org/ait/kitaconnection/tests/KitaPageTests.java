@@ -17,9 +17,7 @@ public class KitaPageTests extends TestBase{
         new UserAccountPage(driver).selectKindergartensBtn()
                 .selectKindergartensList()
                 .selectKindergarten();
-       // new HomePage(driver).selectAllKindergartens();
-        //new AllKitasPage(driver).selectKita()
-          //      .verifyKitaInfoIsPresent(KindergartensData.TITLE);
+
     }
 
     @Test
@@ -43,7 +41,7 @@ public class KitaPageTests extends TestBase{
     public void sendRequestTest() {
         new KitaPage(driver).chooseAKidBtn(ChildrensData.FIRST_NAME)
                 .sendRequest();
-               // .verifyRequestIsInRequestsList("Lea Smith");
+
     }
 
     /*@Test
